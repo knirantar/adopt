@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+
+    <body  style="font-family: 'PT Serif', serif;">
+        
+   <!--Component Start-->
+   <section class="body-font text-justify" >
+    <div class="container px-5 pt-12 mx-auto">
+      <div class="flex flex-col text-center w-full mb-20">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900"> How you can help?</h1>
+      </div>
+      <div class="flex flex-wrap -m-4">
+
+        
+
+        <div class="p-4 md:w-1/2">
+          <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
+            <div class="flex items-center mb-3">
+                <div class="w-12 h-12 mr-3 inline-flex items-center justify-center rounded-full bg-white text-white flex-shrink-0">
+                <img src="{% static 'images/donataion.png' %}">
+              </div>
+              <h2 class="text-gray-900 text-lg title-font font-medium"><b>Donate </b> </h2>
+            </div>
+            <div class="flex-grow">
+              <p class="leading-relaxed text-base"> A lot of NGOs and shelters rely mainly on donations to further their cause. No amount is too small. Help us out by championing a cause you are passionate about.</p>
+             
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 md:w-1/2">
+          <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
+            <div class="flex items-center mb-3">
+                <div class="w-12 h-12 mr-3 inline-flex items-center justify-center rounded-full bg-white text-white flex-shrink-0">
+                 <img src="{% static 'images/charity.png' %}">
+              </div>
+              <h2 class="text-gray-900 text-lg title-font font-medium"><b>Volunteer </b>  </h2>
+            </div>
+            <div class="flex-grow">
+                <p class="leading-relaxed text-base"> You don’t have to be an animal expert to pioneer the adoption of animals. You just need to have the time and desire to lend that helping hand. Calling us to find homes and animals in need can also help move mountains.</p>
+               
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+   <!--Component End-->
+    
+    </body>
+{% endblock %}    
+    
+    

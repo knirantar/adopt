@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Admin </title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+
+ 
+  <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+  <!--Replace with your tailwind.css once created-->
+  <link href="https://unpkg.com/@tailwindcss/custom-forms/dist/custom-forms.min.css" rel="stylesheet">
+  <!--Tailwind Custom Forms - use to standardise form fields - https://github.com/tailwindcss/custom-forms-->
+  
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">  
+  <style>
+    .modal {
+      transition: opacity 0.25s ease;
+    }
+    body.modal-active {
+      overflow-x: hidden;
+      overflow-y: visible !important;
+    }
+  </style>
+
+
+</head>
+
+<body  >
+
+     
+<!-- component -->
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+<div class="md:flex flex-col md:flex-row md:min-h-screen w-full">
+  <div @click.away="open = false" class="flex flex-col w-full md:w-64 text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800 flex-shrink-0" x-data="{ open: false }">
+    <div class="flex-shrink-0 px-8 py-4 flex flex-row items-center justify-between">
+      <a href="index.html" class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline"> AdoptionHQ  </a>
+      <button class="rounded-lg md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+        <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+          <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+          <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+    <nav :class="{'block': open, 'hidden': !open}" class="flex-grow md:block px-4 pb-4 md:pb-0 md:overflow-y-auto">
+        <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="index.html"> Dashboard</a>
+
+      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="adoption.html"> Adoption</a>
+
+      
+      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="foster.html"> Foster</a>
+
+      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="stories.html"> Stories </a>
+
+      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="data.html"> Data </a>
+      
+      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#"> Log Out </a>
+
+      
+
+    </nav>
+  </div>
+
+  <!--Main Page-->
+  <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
+    <div class="container mx-auto px-6 py-8">
+        <h3 class="text-gray-800 text-xl font-medium"> Data </h3>
+
+        <section class="text-gray-700 body-font">
+          <div class="container px-5 pt-4 mx-auto flex flex-wrap">
+            <h2 class="sm:text-3xl text-2xl text-gray-900 font-medium title-font mb-2 md:w-2/5">Pets Available</h2>
+          </div>
+        </section>
+
+        <section class="text-gray-700 body-font ">
+          <div class="container px-5 py-8 mx-auto">
+            <div class="flex flex-wrap -m-4 ">
+      
+              <div class="sm:w-1/4 w-1/2  p-4 ">
+                <div class="bg-white p-6 rounded-lg">
+                  
+                  <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font"> Dog</h3>
+                  <h2 class="text-lg text-gray-900 font-medium title-font mb-4"> Callaway</h2>
+                  <p class="leading-relaxed text-base">R No. 168</p>
+                  <button class="modal-open my-4 btn-outline-primary transition duration-300 ease-in-out focus:outline-none focus:shadow-outline border border-red-600 hover:bg-red-500 text-red-700 hover:text-white font-normal py-2 px-4 rounded"> Remove </button>
+                </div>
+              </div>
+      
+               
+              <div class="sm:w-1/4 w-1/2 p-4">
+                <div class="bg-white p-6 rounded-lg">
+                  
+                  <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">Dog</h3>
+                  <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Merline</h2>
+                  <p class="leading-relaxed text-base">R No. 123</p>
+                  <button class="modal-open my-4 btn-outline-primary transition duration-300 ease-in-out focus:outline-none focus:shadow-outline border border-red-600 hover:bg-red-500 text-red-700 hover:text-white font-normal py-2 px-4 rounded"> Remove </button>
+                </div>
+              </div>
+            
+      
+              <div class="sm:w-1/4 w-1/2 p-4">
+                <div class="bg-white p-6 rounded-lg">
+                  
+                  <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">Cat</h3>
+                  <h2 class="text-lg text-gray-900 font-medium title-font mb-4"> Gretta </h2>
+                  <p class="leading-relaxed text-base">R No. 187</p>
+                  <button class="modal-open my-4 btn-outline-primary transition duration-300 ease-in-out focus:outline-none focus:shadow-outline border border-red-600 hover:bg-red-500 text-red-700 hover:text-white font-normal py-2 px-4 rounded"> Remove </button>
+                </div>
+              </div>
+      
+              <div class="sm:w-1/4 w-1/2 p-4">
+                <div class="bg-white p-6 rounded-lg">
+                  
+                  <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">Rabit</h3>
+                  <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Jack </h2>
+                  <p class="leading-relaxed text-base"> R No. 78</p>
+                  <button class="modal-open my-4 btn-outline-primary transition duration-300 ease-in-out focus:outline-none focus:shadow-outline border border-red-600 hover:bg-red-500 text-red-700 hover:text-white font-normal py-2 px-4 rounded"> Remove </button>
+                </div>
+              </div>
+      
+            </div>
+          </div>
+        </section>
+        <!--Section End-->
+
+        <!--Volunteer Section-->
+        <section class="text-gray-700 body-font">
+          <div class="container px-5 pt-4 mx-auto flex flex-wrap">
+            <h2 class="sm:text-3xl text-2xl text-gray-900 font-medium title-font mb-2 md:w-2/5">Volunteer</h2>
+          </div>
+        </section>
+
+        <section class="text-gray-700 body-font "  >
+          <div class="container px-5 py-8 mx-auto">
+            <div class="flex flex-wrap -m-4 ">
+      
+              <div class="sm:w-1/4 w-1/2  p-4 ">
+                <div class="bg-white p-6 rounded-lg">            
+                  <h2 class="text-lg text-gray-900 font-medium title-font mb-4"> Piyush</h2>
+                  <p class="leading-relaxed text-base">ID: 168</p>
+                  <button class="modal-open my-4 btn-outline-primary transition duration-300 ease-in-out focus:outline-none focus:shadow-outline border border-red-600 hover:bg-red-500 text-red-700 hover:text-white font-normal py-2 px-4 rounded"> Remove </button>
+                </div>
+              </div>
+      
+               
+              <div class="sm:w-1/4 w-1/2 p-4">
+                <div class="bg-white p-6 rounded-lg">
+                  <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Mugdha</h2>
+                  <p class="leading-relaxed text-base">ID: 120 </p>
+                  <button class="modal-open my-4 btn-outline-primary transition duration-300 ease-in-out focus:outline-none focus:shadow-outline border border-red-600 hover:bg-red-500 text-red-700 hover:text-white font-normal py-2 px-4 rounded"> Remove </button>
+                </div>
+              </div>
+            
+      
+              <div class="sm:w-1/4 w-1/2 p-4">
+                <div class="bg-white p-6 rounded-lg">
+                  <h2 class="text-lg text-gray-900 font-medium title-font mb-4"> Srushti </h2>
+                  <p class="leading-relaxed text-base">ID: 187</p>
+                  <button class="modal-open my-4 btn-outline-primary transition duration-300 ease-in-out focus:outline-none focus:shadow-outline border border-red-600 hover:bg-red-500 text-red-700 hover:text-white font-normal py-2 px-4 rounded"> Remove </button>
+                </div>
+              </div>
+      
+              <div class="sm:w-1/4 w-1/2 p-4">
+                <div class="bg-white p-6 rounded-lg">
+                  <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Jack </h2>
+                  <p class="leading-relaxed text-base"> ID: 200</p>
+                  <button class="modal-open my-4 btn-outline-primary transition duration-300 ease-in-out focus:outline-none focus:shadow-outline border border-red-600 hover:bg-red-500 text-red-700 hover:text-white font-normal py-2 px-4 rounded"> Remove </button>
+                </div>
+              </div>
+      
+            </div>
+          </div>
+        </section>
+        <!--Section End-->
+
+         <!--Stories Section-->
+         <section class="text-gray-700 body-font">
+          <div class="container px-5 pt-4 mx-auto flex flex-wrap">
+            <h2 class="sm:text-3xl text-2xl text-gray-900 font-medium title-font mb-2 md:w-2/5">Stories</h2>
+          </div>
+        </section>
+
+        <section class="text-gray-700 body-font "  >
+          <div class="container px-5 py-8 mx-auto">
+            <div class="flex flex-wrap -m-4 ">
+    
+              <div class=" w-1/2  p-4 ">
+                <div class="bg-white p-6 rounded-lg">              
+                  <h3 class="text-lg text-gray-900 font-medium title-font mb-4"> Leo the dachshund, adopted from Upaghna</h3>             
+                  <button class="modal-open my-4 btn-outline-primary transition duration-300 ease-in-out focus:outline-none focus:shadow-outline border border-red-600 hover:bg-red-500 text-red-700 hover:text-white font-normal py-2 px-4 rounded"> Remove </button>
+                </div>
+              </div>
+      
+               
+              <div class="w-1/2 p-4">
+                <div class="bg-white p-6 rounded-lg"> 
+                  <h3 class="text-lg text-gray-900 font-medium title-font mb-4"> Leo the dachshund, adopted from Upaghna</h3>             
+                  <button class="modal-open my-4 btn-outline-primary transition duration-300 ease-in-out focus:outline-none focus:shadow-outline border border-red-600 hover:bg-red-500 text-red-700 hover:text-white font-normal py-2 px-4 rounded"> Remove </button>
+                </div>
+              </div>
+            
+      
+              <div class="w-1/2 p-4">
+                <div class="bg-white p-6 rounded-lg">                
+                  <h3 class="text-lg text-gray-900 font-medium title-font mb-4"> Leo the dachshund, adopted from Upaghna</h3>             
+                  <button class="modal-open my-4 btn-outline-primary transition duration-300 ease-in-out focus:outline-none focus:shadow-outline border border-red-600 hover:bg-red-500 text-red-700 hover:text-white font-normal py-2 px-4 rounded"> Remove </button>
+                </div>
+              </div>
+      
+              <div class="w-1/2 p-4">
+                <div class="bg-white p-6 rounded-lg">              
+                  <h3 class="text-lg text-gray-900 font-medium title-font mb-4"> Chippi the Chippiparai, rescued by our Prince</h3>               
+                  <button class="modal-open my-4 btn-outline-primary transition duration-300 ease-in-out focus:outline-none focus:shadow-outline border border-red-600 hover:bg-red-500 text-red-700 hover:text-white font-normal py-2 px-4 rounded"> Remove </button>
+                </div>
+              </div>
+      
+            </div>
+          </div>
+        </section>
+        <!--Section End-->
+
+
+
+
+      
+ 
+
+
+
+  <!--Modal-->
+  <div class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center">
+    <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
+    
+    <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
+      
+      <div class="modal-close absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50">
+        <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+          <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+        </svg>
+        <span class="text-sm">(Esc)</span>
+      </div>
+
+      <!-- Add margin if you want to see some of the overlay behind the modal-->
+      <div class="modal-content py-4 text-left px-6">
+        <!--Title-->
+        <div class="flex justify-between items-center pb-3">
+          <p class="text-2xl font-bold"> Delete Record</p>
+          <div class="modal-close cursor-pointer z-50">
+            <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+              <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+            </svg>
+          </div>
+        </div>
+
+        <!--Body-->
+        <p>Are you sure you want to delete record? All of your data will be permanently removed. This action cannot be undone.</p>
+        
+
+        <!--Footer-->
+        <div class="flex justify-end pt-2">
+          <button class="modal-close px-4 p-3 r rounded-md border border-transparent px-4 py-2 bg-red-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red transition ease-in-out duration-150 sm:text-sm sm:leading-5"> Delete </button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <!--Modal End-->
+
+
+  <script>
+    var openmodal = document.querySelectorAll('.modal-open')
+    for (var i = 0; i < openmodal.length; i++) {
+      openmodal[i].addEventListener('click', function(event){
+    	event.preventDefault()
+    	toggleModal()
+      })
+    }
+    
+    const overlay = document.querySelector('.modal-overlay')
+    overlay.addEventListener('click', toggleModal)
+    
+    var closemodal = document.querySelectorAll('.modal-close')
+    for (var i = 0; i < closemodal.length; i++) {
+      closemodal[i].addEventListener('click', toggleModal)
+    }
+    
+    document.onkeydown = function(evt) {
+      evt = evt || window.event
+      var isEscape = false
+      if ("key" in evt) {
+    	isEscape = (evt.key === "Escape" || evt.key === "Esc")
+      } else {
+    	isEscape = (evt.keyCode === 27)
+      }
+      if (isEscape && document.body.classList.contains('modal-active')) {
+    	toggleModal()
+      }
+    };
+    
+    
+    function toggleModal () {
+      const body = document.querySelector('body')
+      const modal = document.querySelector('.modal')
+      modal.classList.toggle('opacity-0')
+      modal.classList.toggle('pointer-events-none')
+      body.classList.toggle('modal-active')
+    }
+    
+     
+  </script>
+
+
+
+    </div>
+</main>
+
+</div>
+<!--Component End-->
+
+</body>
+
+</html>
+
+

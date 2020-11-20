@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Admin </title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+
+ 
+  <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+  <!--Replace with your tailwind.css once created-->
+  <link href="https://unpkg.com/@tailwindcss/custom-forms/dist/custom-forms.min.css" rel="stylesheet">
+  <!--Tailwind Custom Forms - use to standardise form fields - https://github.com/tailwindcss/custom-forms-->
+
+
+
+</head>
+
+<body >
+
+     
+<!-- component -->
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+<div class="md:flex flex-col md:flex-row md:min-h-screen w-full">
+  <div @click.away="open = false" class="flex flex-col w-full md:w-64 text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800 flex-shrink-0" x-data="{ open: false }">
+    <div class="flex-shrink-0 px-8 py-4 flex flex-row items-center justify-between">
+      <a href="index.html" class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline"> AdoptionHQ  </a>
+      <button class="rounded-lg md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+        <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+          <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+          <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+    <nav :class="{'block': open, 'hidden': !open}" class="flex-grow md:block px-4 pb-4 md:pb-0 md:overflow-y-auto">
+      
+        <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="index.html"> Dashboard</a>
+      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="adoption.html"> Adoption</a>
+
+      
+      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="foster.html"> Foster</a>
+
+      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="stories.html"> Stories </a>
+
+      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="data.html"> Data </a>
+      
+      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#"> Log Out </a>
+
+      
+
+    </nav>
+  </div>
+
+
+  <!--Main Page-->
+  <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
+    <div class="container mx-auto px-6 py-8">
+        <h3 class="text-gray-800 text-xl font-medium"> Adoption </h3>
+
+       
+<!-- component -->
+
+<div class="mx-4 card bg-white max-w-md p-10 md:rounded-lg my-8 mx-auto">
+    
+    <div class="inputs w-full max-w-2xl px-6 mx-auto">
+        <div class="title">
+            <h1 class="font-bold text-center"> Adoption Form </h1>
+        </div>
+        <form class="mt-6 border-t border-gray-400 pt-4" method = 'post' enctype="multipart/form-data">
+            {% csrf_token %}
+
+             
+            <label for="myfile">Select a Picture:</label>
+            <input type="file" id="myfile" name="myfile">
+            
+
+            <div class="options md:flex md:space-x-6 text-sm items-center text-gray-700 mt-4">
+                <p class="w-1/2 mb-2 md:mb-0"> Species    </p>
+                <select class="w-full border border-gray-200 p-2 focus:outline-none focus:border-gray-500">
+                    <option value="select" selected>Select an option</option>
+                    <option value="bug"> Dog </option>
+                    <option value="feature"> Cat </option>
+                    <option value="feature"> Other </option>
+                </select>
+            </div> 
+
+            <div class="flex flex-col text-sm py-4">
+                <label for="title" class="font-bold mb-2"> Name: </label>
+                <input class=" appearance-none border border-gray-200 p-2 focus:outline-none focus:border-gray-500" type="text" placeholder="Enter a Name"> 
+            </div>
+
+            <div class="flex flex-col text-sm py-4">
+                <label for="title" class="font-bold mb-2">Breed: </label>
+                <input class=" appearance-none border border-gray-200 p-2 focus:outline-none focus:border-gray-500" type="text" placeholder="Enter a breed"> 
+            </div>
+
+            
+
+            <div class="flex flex-col text-sm py-4">
+                <label for="title" class="font-bold mb-2"> Color: </label>
+                <input class=" appearance-none border border-gray-200 p-2 focus:outline-none focus:border-gray-500" type="text" placeholder="Enter a color"> 
+            </div>
+
+            <div class="flex flex-col text-sm py-4">
+                <label for="title" class="font-bold mb-2"> Size: </label>
+                <input class=" appearance-none border border-gray-200 p-2 focus:outline-none focus:border-gray-500" type="text" placeholder="Enter a Size"> 
+            </div>
+
+            <div class="flex flex-col text-sm py-4">
+                <label for="title" class="font-bold mb-2"> Age: </label>
+                <input class=" appearance-none border border-gray-200 p-2 focus:outline-none focus:border-gray-500" type="text" placeholder="Enter a Age"> 
+            </div>
+
+            <div class="flex flex-col text-sm py-4">
+                <label for="title" class="font-bold mb-2"> City: </label>
+                <input class=" appearance-none border border-gray-200 p-2 focus:outline-none focus:border-gray-500" type="text" placeholder="Enter a city"> 
+            </div>
+
+            <div class="flex flex-col text-sm py-4">
+                <label for="title" class="font-bold mb-2"> Reference Number: </label>
+                <input class=" appearance-none border border-gray-200 p-2 focus:outline-none focus:border-gray-500" type="text" placeholder="Enter a number"> 
+            </div>
+
+            <div class="options md:flex md:space-x-6 text-sm items-center text-gray-700 mt-4">
+                <p class="w-1/2 mb-2 md:mb-0"> Neutered     </p>
+                <select class="w-full border border-gray-200 p-2 focus:outline-none focus:border-gray-500">
+                    <option value="select" selected>Select an option</option>
+                    <option value="bug"> Yes </option>
+                    <option value="feature"> No </option>
+                </select>
+            </div> 
+
+            <div class="text-sm flex flex-col py-4">
+                <label for="description" class="font-bold  mb-2">Description:</label>
+                   <textarea class=" appearance-none w-full border border-gray-200 p-2 h-40 focus:outline-none focus:border-gray-500"  placeholder="Enter your description"></textarea>
+            </div>
+
+            <div class="submit">
+                <button type="submit" class=" w-full bg-blue-600 shadow-lg text-white px-4 py-2 hover:bg-blue-700 mt-8 text-center font-semibold focus:outline-none ">Submit</button>
+            </div>
+
+        </form>
+    </div>
+    
+    
+</div>
+
+
+   
+</main>
+
+
+<!--Component End-->
+</body>
+
+</html>
+
+

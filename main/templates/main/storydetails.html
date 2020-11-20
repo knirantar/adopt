@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+
+    <body style="font-family: 'PT Serif', serif;">
+    
+        
+   <!--Component Start-->
+
+<div class="max-w-screen-xl mx-auto text-justify" style="font-family: 'PT Serif', serif;">
+    
+
+    <main class="mt-10">
+
+      <div class="mb-4 md:mb-0 w-full max-w-screen-md mx-auto relative" style="height: 24em;">
+        <div class="absolute left-0 bottom-0 w-full h-full z-10"
+          style="background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.7));"></div>
+        <img src="{{story.image.url}}" class="absolute left-0 top-0 w-full h-full z-0 object-cover" />
+        
+      </div>
+
+      <div class="px-4 lg:px-0 mt-12 text-gray-800 max-w-screen-md mx-auto text-lg leading-relaxed">
+
+        <h2 class="text-2xl text-gray-800 font-semibold mb-4 mt-4">{{story.title}}</h2>
+
+        <p class="pb-6">{{story.para1}}</p>
+
+        <p class="pb-6">{{story.para2}}</p>
+
+        <p class="pb-6">{{story.para3}}</p>
+
+        <p class="pb-6">{{story.para4}}</p>
+
+      </div>
+    </main>
+  </div>
+   <!--Component End-->
+    
+
+    
+    </body>
+{% endblock %}    
+    
+    

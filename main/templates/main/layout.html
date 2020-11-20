@@ -1,0 +1,80 @@
+{% load static %}
+<html lang="en">
+  <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta http-equiv="X-UA-Compatible" content="ie=edge">
+          <title>Adopt Pet </title>
+          <meta name="description" content="">
+          <meta name="keywords" content="">
+          <meta name="author" content="">
+        
+          
+          <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+          <!--Replace with your tailwind.css once created-->
+          <link href="https://unpkg.com/@tailwindcss/custom-forms/dist/custom-forms.min.css" rel="stylesheet">
+          <!--Tailwind Custom Forms - use to standardise form fields - https://github.com/tailwindcss/custom-forms-->
+          
+          <!--Google Fonts-->
+          <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+          
+          <style>
+            #menu-toggle:checked+#menu {
+                display: block;
+            }
+            
+        </style>
+  </head>
+  <!-- Header -->   
+  
+  
+  <header class="lg:px-16 px-6 bg-yellow-300 flex flex-wrap items-center lg:py-0 py-2 shadow">
+         
+    <div class="flex-1 flex justify-between items-center" >
+        <a href="{% url 'home' %}" ><!--logo-->
+           <div class="text-2xl text-gray-800 inline-flex " style="font-weight:bold;" > 
+            
+            AdoptionHQ
+        </div>
+        </a>
+    </div>
+
+    <label for="menu-toggle" class="pointer-cursor lg:hidden block"><svg class="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><title>menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path></svg></label>
+    <input class="hidden" type="checkbox" id="menu-toggle" />
+    <div class=" hidden lg:flex lg:items-center lg:w-auto w-full " id="menu" >
+        <nav>
+            <ul class="lg:flex items-center justify-between text-base text-gray-800 pt-4 lg:pt-0 text-lg">
+                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-black " href="{% url 'home' %}" style="font-weight:bold;"> Home </a></li>
+                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-black" href="{% url 'adoption' %}" style="font-weight:bold;"> Adoption </a></li>
+                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-black" href="{% url 'volunteer' %}" style="font-weight:bold;"> Volunteer </a></li>
+                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-black " href="{% url 'stories' %}"  style="font-weight:bold;" > Stories  </a></li>
+                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-black" href="{% url 'donation' %}" style="font-weight:bold;"> Donate </a></li>
+                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-black " href="{% url 'about' %}"  style="font-weight:bold;" > About Us  </a></li>
+                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-black lg:mb-0 mb-2" href="{% url 'contact' %}"  style="font-weight:bold;"> Contact Us </a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!--Header End -->
+{% block content %} {% endblock %}
+
+ <!--Footer Start-->
+ <footer class="text-gray-700 body-font  bg-gray-100"  >
+    <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+      <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+        <span class="ml-3 text-xl"> AdoptionHQ </span>
+      </a>
+      
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+        <a class="ml-1 " href="https://www.instagram.com/adoptionhq.in/" > 
+          <img src="{% static 'images/instagram.png' %}" class="px-6" alt="instagram">
+        </a>
+        <a class="ml-1 " href="https://www.instagram.com/" > 
+          <img src="{% static 'images/facebook.png' %}" class="px-6" alt="facebook">
+        </a>
+</footer>
+  
+<!--Footer End-->
+
+  </html>

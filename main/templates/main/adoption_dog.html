@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+
+    <body style="font-family: 'PT Serif', serif;" >
+        
+   
+    
+  <!--Section 1 Start-->
+  <section class="text-gray-700 body-font "  >
+    <div class="container px-5 py-12 mx-auto">
+      <div class="flex flex-wrap -m-4 ">
+        {% for dog,li in zipped_list %}
+        <div class="xl:w-1/4 md:w-1/2 p-4 ">
+          <div class="bg-gray-100 p-6 rounded-lg">
+            <img class="h-40 rounded w-full object-cover object-center mb-6" src="{{li}}" alt="dog">
+            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font"> Adopt</h3>
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-4"> {{dog.name}}</h2>
+            <p class="leading-relaxed text-base">{{dog.gender}}
+              {{dog.reference_no}}
+              {{dog.age}}.</p>
+              <a class="mt-3 text-indigo-500 inline-flex items-center  transform motion-reduce:transform-none hover:-translate-y-1 hover:scale-110 transition ease-in-out duration-300 " href="{% url 'details' dog.reference_no %}">Learn More
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <!--Section End-->
+      
+    </body>
+  {% endblock %}  
+    

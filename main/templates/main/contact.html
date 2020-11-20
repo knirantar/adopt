@@ -1,0 +1,99 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+
+<body style="font-family: 'PT Serif', serif;">
+
+  {% include 'messages.html' %}
+  <!--Section Start-->
+    
+    <section class="text-gray-700 body-font" >
+        <div class="container mx-auto flex px-5 py-4 md:flex-row flex-col items-center">
+
+          <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+            <img class="object-cover object-center rounded" alt="hero" src="{% static 'images/contact.png' %}">
+          </div>
+
+          <section class="text-gray-700 body-font relative">
+            <form method="post">
+              {% csrf_token %}
+            <div class="container px-5 py-12 mx-auto">
+              <div class="flex flex-col text-center w-full mb-12">
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900"> Contact Us </h1>
+                <p class="lg:w-2/3 mx-auto leading-relaxed text-base "> We would love to hear your thoughts , concerns or problem so we can improve.  Thank You...! </p>
+              </div>
+              <div class="lg:w-1/2 md:w-2/3 mx-auto">
+                <div class="flex flex-wrap -m-2">
+                  <div class="p-2 w-1/2">
+                    <input class="w-full bg-white rounded border border-gray-400 focus:outline-none focus:border-gray-600 text-base px-4 py-2" placeholder="Name" name="name" type="text">
+                  </div>
+                  <div class="p-2 w-1/2">
+                    <input class="w-full bg-white rounded border border-gray-400 focus:outline-none focus:border-gray-600  text-base px-4 py-2" placeholder="Email" name = "email" type="email">
+                  </div>
+                  <div class="p-2 w-full">
+                    <textarea class="w-full bg-white rounded border border-gray-400 focus:outline-none h-48 focus:border-gray-600  text-base px-4 py-2 resize-none block" placeholder="Message" name = "message"></textarea>
+                  </div>
+                  <div class="p-2 w-full">
+                    <button class="flex mx-auto text-black  bg-teal-300 border-0 py-2 px-8 focus:outline-none  rounded text-lg   transform motion-reduce:transform-none hover:-translate-y-1 hover:scale-110 transition ease-in-out duration-300 " type="submit" > Send Your Message</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          </section>
+          
+
+        </div>
+      </section>
+    <!--Section End-->
+
+
+
+      <!--Component Start-->
+      
+
+      <section class="text-gray-700 body-font">
+        <div class="container px-5 py-4 mx-auto">
+
+
+          <div class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col ">
+            <div class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center  flex-shrink-0">
+              <img src="{% static 'images/phone.png' %}" alt="phone" >
+            </div>
+            <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+              <h2 class="text-gray-900 text-xl title-font font-medium mb-2">Contact Nos :</h2>
+              <a class="text-lg text-gray-800 hover:text-blue-600 " href="tel:+917058206615">705-820-6615</a> <br>
+              <a class="text-lg text-gray-800 hover:text-blue-600 " href="tel:+917058749362">705-874-9362</a>
+            </div>
+          </div>
+
+          <div class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col ">
+            <div class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center  flex-shrink-0">
+              <img src="{% static 'images/mail.png' %}" alt="phone" >
+            </div>
+            <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+              <h2 class="text-gray-900 text-xl title-font font-medium mb-2">Email IDs :</h2>
+              <a class="text-lg text-gray-800 hover:text-blue-600" href="mailto:siddhi@adoptionhq.in">siddhi@adoptionhq.in</a> <br>
+            <a class="text-lg text-gray-800 hover:text-blue-600" href="mailto:sakshi@adoptionhq.in">sakshi@adoptionhq.in</a>
+            </div>
+          </div>
+
+
+        </div>
+      </section>
+
+
+     
+      <!--Component End-->
+    
+    </body>
+    <script>
+      setTimeout(function(){
+        if($('#msg').length > 0){
+          $('#msg').remove();
+        }
+      },2000)
+    </script>  
+    {% endblock %}  
+    
+    

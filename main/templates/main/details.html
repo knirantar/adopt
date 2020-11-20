@@ -1,0 +1,154 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+
+  <body style="font-family: 'PT Serif', serif;" >
+  
+      
+ <!--Component Start-->
+
+
+ <section class="text-gray-700 body-font">
+  <div class="container px-5 pt-16 mx-auto flex flex-col">
+    <div class="lg:w-4/6 mx-auto">
+      <div class="rounded-lg h-64 overflow-hidden">
+        <img alt="content" class="object-cover object-center h-full w-full" src="{{photos.0.image.url}}">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+ <section class="text-gray-700 body-font">
+  <div class="container px-5 py-4 mx-auto">
+
+    <div class="flex flex-col text-center w-full mb-20">
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">{{particular_anim.name}}</h1>
+      <a class="flex-grow text-blue-500 border-b-2 border-blue-500 py-2 text-lg px-1">Description</a>
+      <p class="leading-relaxed pt-2">{{particular_anim.description}}</p>
+    </div>
+
+    
+
+    <div class="flex flex-wrap -m-2">
+
+      <div class="p-2 lg:w-1/4 md:w-1/2 w-full">
+        <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+          <div class="flex-grow">
+            <h2 class="text-gray-900  title-font font-medium">Species:  {{particular_anim.species}}</h2>
+             
+          </div>
+        </div>
+      </div>
+
+      <div class="p-2 lg:w-1/4 md:w-1/2 w-full">
+        <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">    
+          <div class="flex-grow">
+            <h2 class="text-gray-900 title-font font-medium">Breed :	{{particular_anim.breed}}</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-2 lg:w-1/4 md:w-1/2 w-full">
+        <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">         
+          <div class="flex-grow">
+            <h2 class="text-gray-900 title-font font-medium">Age :	{{particular_anim.age}}</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-2 lg:w-1/4 md:w-1/2 w-full">
+        <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">      
+          <div class="flex-grow">
+            <h2 class="text-gray-900 title-font font-medium"> Gender : {{particular_anim.gender}}</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-2 lg:w-1/4 md:w-1/2 w-full">
+        <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">     
+          <div class="flex-grow">
+            <h2 class="text-gray-900 title-font font-medium">Size	: {{particular_anim.size}} </h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-2 lg:w-1/4 md:w-1/2 w-full">
+        <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">  
+          <div class="flex-grow">
+            <h2 class="text-gray-900 title-font font-medium">Color : {{particular_anim.color}} </h2>
+          </div>
+        </div>
+      </div>
+
+      
+      
+      <div class="p-2 lg:w-1/4 md:w-1/2 w-full">
+        <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+          <div class="flex-grow">
+            <h2 class="text-gray-900 title-font font-medium">Neutered :{{particular_anim.neutered}}<span>
+              <label class="inline-flex items-center mt-3 ml-4">
+            </label>
+            </span>	 </h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-2 lg:w-1/4 md:w-1/2 w-full">
+        <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+          <div class="flex-grow">
+            <h2 class="text-gray-900 title-font font-medium">Location	: {{particular_anim.city}}</h2>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+ <!--Component End-->
+
+  <!--Section Start-->
+  <section class="w-full ">
+    <div class="py-20 px-4 text-left md:text-center w-full md:w-3/4 lg:w-2/4 mx-auto">
+      
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-6 md:mb-6 leading-tight tracking-tight">Ready to make a furry friend? </h2>
+      <div class="space-x-0 md:space-x-2 mb-0">
+        <a href="https://forms.gle/UVVJuWHKbuXoTgXP6" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-xl leading-6  rounded-md text-white bg-indigo-600  transform motion-reduce:transform-none hover:-translate-y-1 hover:scale-110 transition ease-in-out duration-300 "> ADOPT 
+          <svg class="ml-1 w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path
+              fill-rule="evenodd"
+              d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </a>
+        
+      </div>
+    </div>
+  </section>
+  
+  
+   <!--Section End-->
+  
+   <!--Gallery Start-->
+ <div class="px-4 py-12 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-16">
+  <div class="grid gap-5 lg:grid-cols-4 sm:max-w-sm sm:mx-auto lg:max-w-full">
+
+    {% for i in li %}
+    <div class="overflow-hidden transition-shadow duration-300 bg-white rounded">
+      <a> <img src="{{i}}" class="object-cover w-full h-64 rounded" alt="" /></a>
+    </div>
+    {% endfor %}
+
+  </div>
+</div>
+ <!--Gallery End-->
+
+  </body>
+{% endblock %}  
+  
+  

@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Admin </title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+
+ 
+  <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+  <!--Replace with your tailwind.css once created-->
+  <link href="https://unpkg.com/@tailwindcss/custom-forms/dist/custom-forms.min.css" rel="stylesheet">
+  <!--Tailwind Custom Forms - use to standardise form fields - https://github.com/tailwindcss/custom-forms-->
+  <!--Google Fonts-->
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body >
+
+    <!-- component -->
+     
+  
+    <section class="text-gray-700 body-font"   >
+      <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
+        <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
+          <h1 class="title-font font-medium text-3xl text-gray-900 text-center">You're doing a great job! We are proud of you .</h1>
+        
+        </div>
+        
+          <div class="lg:w-2/6 md:w-1/2 bg-gray-200 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
+            <h1 class="mb-4 text-3xl text-center text-gray-900"  > Login  </h1>
+            <form method = 'POST'>
+              {% csrf_token %}
+              <input class="block border border-grey-light w-full p-3 mt-4 rounded mb-4 focus:outline-none focus:border-indigo-500"  type="text"  name="email" placeholder="Email" />    
+              
+              <input  class="block border border-grey-light w-full p-3 rounded mb-4 focus:outline-none focus:border-indigo-500" type="password" name="password" placeholder="Password" />  
+              
+              <input  class="w-full text-center py-3 rounded-lg  text-white hover:bg-green-dark focus:outline-none my-1  bg-gradient-to-r from-blue-600 to-indigo-600" type="submit" value = 'login'></form>
+          </div>
+      </div>
+    </section>
+
+<!--Component End-->
+
+</body>
+
+</html>
+
+
+
