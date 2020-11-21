@@ -24,8 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '%0@77e1=ez0gre7v0o$ahu+l#6)i7d*wg3h#rxnx4s*vx+_^g#'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# SECURITY WARNING: don't run with debug turned on in production
 
 ALLOWED_HOSTS = ['adoptionhq.herokuapp.com','127.0.0.1']
 
